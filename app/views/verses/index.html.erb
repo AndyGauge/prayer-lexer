@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Verses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Verseid</th>
+      <th>Book</th>
+      <th>Chapter</th>
+      <th>Verse</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @verses.each do |verse| %>
+      <tr>
+        <td><%= verse.verseid %></td>
+        <td><%= verse.book %></td>
+        <td><%= verse.chapter %></td>
+        <td><%= verse.verse %></td>
+        <td><%= link_to 'Show', verse %></td>
+        <td><%= link_to 'Edit', edit_verse_path(verse) %></td>
+        <td><%= link_to 'Destroy', verse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Verse', new_verse_path %>
