@@ -4,5 +4,8 @@ namespace :importer do
     require 'importer'
     Importer.perform
   end
-
+  task train: :environment do
+    require 'importer'
+    Importer.train
+  end
 end

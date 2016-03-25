@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'classifier-reborn'
 gem 'ruby-progressbar'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
