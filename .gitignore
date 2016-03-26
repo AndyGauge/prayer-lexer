@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# dat files are binary data files, should be generated not stored
+*.dat

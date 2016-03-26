@@ -8,4 +8,8 @@ class Verse < ActiveRecord::Base
     self.chapter ||= slug[2..4].to_i
     self.verse ||= slug[5..7].to_i
   end
+
+  def inspect
+    "#{book} #{chapter}:#{verse}"
+  end
 end
