@@ -2,6 +2,7 @@ module Importer
   require 'csv'
   require 'ruby-progressbar'
   require 'classifier-reborn'
+  require './lib/biblical'
 
   def self.perform
     return false unless data_ok?
@@ -13,6 +14,11 @@ module Importer
     classifier_snapshot = Marshal.dump classifier
     File.open(snapshot, "wb") {|file| file.write(classifier_snapshot) }
     true
+  end
+
+  def self.lex(prayer)
+    slug = classifier.classify prayer
+    "#{Biblical.books[slug[0..1].to_i]} #{slug[2..4].to_i}:#{slug[5..7].to_i}"
   end
 
   def self.classifier
