@@ -12,7 +12,7 @@ Before parsing prayers, a topical CSV file from [www.openbible.info/topics/](htt
 
 There is a rake task that iterates over the CSV and trains the classifier.  This trains the categories (verses) with the topics.  To run the rake task.
 
-    rake
+    rake train
 
 ### Command Line ###
 
@@ -25,7 +25,16 @@ In the working directory of the application, passing lex.rb to ruby with a singl
 
 To run as a web api, run app.rb and use a browser to navigate to localhost:4567
 
-    ruby app.rb
+    rake server
+
+TL;DR
+=====
+
+Just run rake.
+
+    rake
+
+This will download the updates, retrain the classifier, and start the application.
 
 More Information
 ----------------
