@@ -1,4 +1,5 @@
 task :default => [:download, :import, :server]
+task :production => [:download, :import]
 
 task :import do
   ruby 'import.rb'
